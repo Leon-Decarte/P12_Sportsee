@@ -10,11 +10,7 @@ import AverageSessionsChart from '../components/AverageSessionsChart';
 import PerformanceRadarChart from '../components/PerformanceRadarChart';
 import ScoreChart from '../components/ScoreChart';
 
-import KeyDataCard from '../components/KeyDataCard';
-import calorieIcon from '../assets/calorie-icon.svg';
-import proteinIcon from '../assets/protein-icon.svg';
-import carbIcon from '../assets/carb-icon.svg';
-import fatIcon from '../assets/fat-icon.svg';
+
 
 import CardsColumn from '../components/CardsColumn';
 import styles from './Profil.module.css';
@@ -62,17 +58,25 @@ function Profil() {
     if (!user || !activity || !averageSessions || !performance) return <p>Chargement...</p>;
 
     return (
-        <div className={styles.main}>
-            <div className={styles.chartsColumn}>
-                <ActivityChart data={activity} />
-                <div className={styles.subChartsRow}>
-                    <AverageSessionsChart data={averageSessions} />
-                    <PerformanceRadarChart data={performance} />
-                    <ScoreChart score={user.todayScore || user.score} />
-                </div>
-            </div>
 
-            <CardsColumn keyData={user.keyData} />
+        <div className={styles.pageWrapper}>
+            <div className={styles.container}>
+                <h1 className={styles.title}>Bonjour <span className={styles.userName}>{user.userInfos.firstName}</span></h1>
+                <p className={styles.subtitle}>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
+            </div>
+            <div className={styles.main}>
+                <div className={styles.chartsColumn}>
+                    <ActivityChart data={activity} />
+                    <div className={styles.subChartsRow}>
+                        <div><AverageSessionsChart data={averageSessions} /></div>
+                        <div><PerformanceRadarChart data={performance} /></div>
+                        <div><ScoreChart score={user.todayScore || user.score} /></div>
+                    </div>
+
+                </div>
+
+                <CardsColumn keyData={user.keyData} />
+            </div>
         </div>
 
     );

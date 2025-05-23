@@ -1,0 +1,29 @@
+.card {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #FBFBFB;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 15px;
+
+}
+
+.iconContainer {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.label {
+    color: #74798C;
+    font-size: 14px;
+}
+
+.value {
+    font-weight: bold;
+}

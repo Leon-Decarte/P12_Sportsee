@@ -3,10 +3,12 @@ import calorieIcon from '../assets/calorie-icon.svg';
 import proteinIcon from '../assets/protein-icon.svg';
 import carbIcon from '../assets/carb-icon.svg';
 import fatIcon from '../assets/fat-icon.svg';
+import styles from './CardsColumn.module.css';
+
 
 export default function CardsColumn({ keyData }) {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <div className={styles.column}>
             <KeyDataCard
                 iconPath={calorieIcon}
                 value={keyData.calorieCount}

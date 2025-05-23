@@ -1,37 +1,22 @@
 import PropTypes from 'prop-types';
+import styles from './KeyDataCard.module.css';
 
 export default function KeyDataCard({ iconPath, value, unit, label, bgColor }) {
     return (
-        <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            backgroundColor: '#FBFBFB',
-            borderRadius: '5px',
-            padding: '15px',
-            marginBottom: '20px'
-        }}>
-            <div style={{
-                width: '60px',
-                height: '60px',
-                borderRadius: '6px',
-                backgroundColor: bgColor,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: '15px'
-            }}>
+        <div className={styles.card}>
+            <div className={styles.iconContainer} style={{ backgroundColor: bgColor }}>
                 <img src={iconPath} alt={label} width="20" />
             </div>
             <div>
-                <p style={{ fontWeight: 'bold' }}>{value}{unit}</p>
-                <p style={{ color: '#74798C', fontSize: '14px' }}>{label}</p>
+                <p className={styles.value}>{value}{unit}</p>
+                <p className={styles.label}>{label}</p>
             </div>
         </div>
     );
 }
 
 KeyDataCard.propTypes = {
-    icon: PropTypes.string.isRequired,
+    iconPath: PropTypes.string.isRequired,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     unit: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,

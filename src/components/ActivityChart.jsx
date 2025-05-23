@@ -1,27 +1,38 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, CartesianGrid } from 'recharts';
+import {
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    Tooltip,
+    ResponsiveContainer,
+    Legend,
+    CartesianGrid
+} from 'recharts';
 import PropTypes from 'prop-types';
+import styles from './ActivityChart.module.css';
+
 
 function CustomTooltip({ active, payload }) {
     if (active && payload && payload.length) {
         return (
-            <div style={{ backgroundColor: "#fff", padding: "10px", border: "1px solid #ccc" }}>
+            <div className={styles.tooltip}>
                 <p>{payload[0].value}kg</p>
                 <p>{payload[1].value}kCal</p>
             </div>
         );
     }
-
     return null;
 }
 
+
 export default function ActivityChart({ data }) {
     return (
-        <div style={{ backgroundColor: "#fbfbfb", padding: "20px" }}>
-            <h2>Activité quotidienne</h2>
+        <div className={styles.container}>
+            <h2 className={styles.title}>Activité quotidienne</h2>
             <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={data} barGap={8}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                    <XAxis dataKey="day" tickFormatter={(day, index) => index + 1} />
+                    <XAxis dataKey="day" />
                     <YAxis yAxisId="left" orientation="left" dataKey="kilogram" />
                     <YAxis yAxisId="right" orientation="right" dataKey="calories" hide />
                     <Tooltip content={<CustomTooltip />} />

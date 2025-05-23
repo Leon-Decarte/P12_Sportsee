@@ -1,0 +1,18 @@
+.container {
+    background-color: #fbfbfb;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.title {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.tooltip {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    border-radius: 5px;
+}
