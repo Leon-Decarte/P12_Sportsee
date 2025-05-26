@@ -68,7 +68,9 @@ function Profil() {
                 </div>
                 <div className={styles.main}>
                     <div className={styles.chartsColumn}>
-                        <ActivityChart data={activity} />
+                        <div className={styles.activityWrapper}>
+                            <ActivityChart data={activity} />
+                        </div>
                         <div className={styles.subChartsRow}>
                             <div><AverageSessionsChart data={averageSessions} /></div>
                             <div><PerformanceRadarChart data={performance} /></div>

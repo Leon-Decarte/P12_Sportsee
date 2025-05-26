@@ -1,7 +1,11 @@
-
-
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100 900;
+    src: local('Roboto'), local('Roboto-Regular'), url('https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKOzY.woff2') format('woff2');
+}
 :root {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: "Roboto", system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
@@ -26,7 +30,6 @@ a:hover {
 }
 
 body {
-    max-width: 1200px;
     margin: 0 auto;
 }
 
