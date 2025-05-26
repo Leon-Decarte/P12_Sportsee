@@ -16,6 +16,12 @@
     margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+}
+
 .chartsColumn {
     display: flex;
     flex-direction: column;
@@ -29,6 +35,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-height: calc(100vh - 60px);
 }
 
 .subChartsRow {
@@ -36,6 +43,8 @@
     gap: 30px;
     width: 100%;
     height: 250px;
+    margin: 0 auto;
+    flex: 1;
     /* Hauteur contrôlée pour les graphs */
 }
 
@@ -47,6 +56,10 @@
 @media (max-width: 768px) {
     .subChartsRow {
         flex-direction: column;
+        gap: 20px;
+        height: 500px;
+        width: 60%;
+         /* Ajustement de la hauteur pour les petits écrans */
     }
 
     .subChartsRow>div {
