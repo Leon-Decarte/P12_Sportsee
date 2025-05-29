@@ -1,10 +1,7 @@
-
-
-
 .pageWrapper {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -22,13 +19,14 @@
 
 .main {
     width: 100%;
-    background-color: aqua;
-  display: flex;
-  height: calc(100vh - 00px); /* 👈 adjusts based on navbar */
-  gap: 20px;
-  padding: 20px;
-  box-sizing: border-box;
-  margin: 0 auto;
+    display: flex;
+    height: calc(100vh - 00px);
+    /* 👈 adjusts based on navbar */
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    height: auto;
 }
 
 @media (max-width: 768px) {
@@ -38,36 +36,37 @@
 }
 
 .chartsColumn {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 100%;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
 }
 
 
 
 
 .cardsColumn {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  gap: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    gap: 20px;
 }
+
 
 .subChartsRow {
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  height: 40%;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    height: auto;
 }
 
-.subChartsRow > div {
-  flex: 1;
-  aspect-ratio: 1 / 1;
-  height: 100%;
+.subChartsRow>div {
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    height: 100%;
 }
 
 

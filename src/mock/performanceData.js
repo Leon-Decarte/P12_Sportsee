@@ -1,12 +1,12 @@
 export const performanceMock = {
     userId: 12,
     kind: {
-        1: "Cardio",
-        2: "Energie",
-        3: "Endurance",
-        4: "Force",
-        5: "Vitesse",
-        6: "Intensité"
+        1: 'Intensité',
+        2: 'Vitesse',
+        3: 'Force',
+        4: 'Endurance',
+        5: 'Énergie',
+        6: 'Cardio',
     },
     data: [
         { value: 80, kind: 1 },

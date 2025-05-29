@@ -1,4 +1,3 @@
-import './Sidebar.css';
 import Mediation from '../assets/meditation-icon.svg';
 import Muscu from '../assets/muscu-icon.svg';
 import Natation from '../assets/natation-icon.svg';
