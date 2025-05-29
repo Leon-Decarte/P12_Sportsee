@@ -28,19 +28,48 @@ function CustomTooltip({ active, payload }) {
 export default function ActivityChart({ data }) {
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Activité quotidienne</h2>
+            <div className={styles.headerRow}>
+                <h2 className={styles.title}>Activité quotidienne</h2>
+                <div className={styles.legend}>
+                    <div>
+                        <span className={styles.dot} style={{ backgroundColor: '#282D30' }}></span>
+                        Poids (kg)
+                    </div>
+                    <div>
+                        <span className={styles.dot} style={{ backgroundColor: '#E60000' }}></span>
+                        Calories brûlées (kCal)
+                    </div>
+                </div>
+            </div>
             <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={data} barGap={8}>
+                <BarChart
+                    data={data}
+                    barCategoryGap={30}
+                    barGap={8}
+                    margin={{ top: 30, right: 30, left: 30, bottom: 5 }}
+                >
                     <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                    <XAxis dataKey="day" />
-                    <YAxis yAxisId="left" orientation="left" dataKey="kilogram" />
-                    <YAxis yAxisId="right" orientation="right" dataKey="calories" hide />
+                    <XAxis
+                        dataKey="day"
+                        tickLine={false}
+                        axisLine={{ stroke: '#DEDEDE' }}
+                        tick={{ fill: '#9B9EAC', fontSize: 14 }}
+                    />
+                    <YAxis
+                        yAxisId="left"
+                        orientation="right"
+                        tickLine={false}
+                        axisLine={false}
+                        tick={{ fill: '#9B9EAC', fontSize: 14 }}
+                    />
+                    <YAxis yAxisId="right" orientation="left" hide />
                     <Tooltip content={<CustomTooltip />} />
-                    <Legend verticalAlign="top" align="right" />
-                    <Bar yAxisId="left" dataKey="kilogram" fill="#282D30" radius={[5, 5, 0, 0]} />
-                    <Bar yAxisId="right" dataKey="calories" fill="#E60000" radius={[5, 5, 0, 0]} />
+                    
+                    <Bar dataKey="kilogram" yAxisId="left" fill="#282D30" barSize={7} radius={[3, 3, 0, 0]} />
+                    <Bar dataKey="calories" yAxisId="right" fill="#E60000" barSize={7} radius={[3, 3, 0, 0]} />
                 </BarChart>
             </ResponsiveContainer>
+
         </div>
     );
 }
