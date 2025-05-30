@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
-import { getUserDataMock } from '../services/userServiceMock';
-import { getUserActivityMock } from '../services/activityServiceMock';
-import { getAverageSessionsMock } from '../services/averageSessionsServiceMock';
-import { getUserPerformanceMock } from '../services/performanceServiceMock';
+import {
+    getUserData,
+    getUserActivity,
+    getUserAverageSessions,
+    getUserPerformance
+} from '../services/apiService';
+
 
 
 import ActivityChart from '../components/ActivityChart';
@@ -29,32 +32,21 @@ function Profil() {
 
 
     useEffect(() => {
-        getUserDataMock(12).then(setUser);
+        const fetchData = async () => {
+            const user = await getUserData(18);
+            const activity = await getUserActivity(18);
+            const average = await getUserAverageSessions(18);
+            const performance = await getUserPerformance(18);
 
-        getUserActivityMock(12).then((data) => {
-            const sessions = data.sessions.map((session, index) => ({
-                ...session,
-                day: index + 1,
-            }));
-            setActivity(sessions);
-        });
+            setUser(user);
+            setActivity(activity);
+            setAverageSessions(average);
+            setPerformance(performance);
+        };
 
-        getAverageSessionsMock(12).then((data) => {
-            setAverageSessions(data.sessions);
-        });
-        getUserPerformanceMock(12).then((data) => {
-            const kindLabels = data.kind;
-
-            // On transforme les IDs (1,2,...) en labels ("Cardio", etc.)
-            const formattedData = data.data.map((item) => ({
-                value: item.value,
-                kind: kindLabels[item.kind]
-            }));
-
-            setPerformance(formattedData);
-        });
-
+        fetchData();
     }, []);
+
 
     if (!user || !activity || !averageSessions || !performance) return <p>Chargement...</p>;
 
