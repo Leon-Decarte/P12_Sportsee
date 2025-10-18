@@ -1,0 +1,92 @@
+/* src/pages/NotFound.module.css - VERSION AMÉLIORÉE */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 40px;
+}
+
+.content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.errorCode {
+    font-size: 6rem;
+    color: #FF0101;
+    margin: 0;
+    font-weight: 700;
+}
+
+.title {
+    font-size: 2rem;
+    color: #020203;
+    margin: 10px 0;
+}
+
+.message {
+    font-size: 1.1rem;
+    color: #74798C;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.suggestions {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.suggestions p {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #020203;
+}
+
+.suggestions ul {
+    color: #74798C;
+    padding-left: 20px;
+}
+
+.suggestions li {
+    margin-bottom: 5px;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.homeButton,
+.userButton {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.homeButton {
+    background: #FF0101;
+    color: white;
+}
+
+.homeButton:hover {
+    background: #e60000;
+}
+
+.userButton {
+    background: #f0f0f0;
+    color: #020203;
+    border: 1px solid #ddd;
+}
+
+.userButton:hover {
+    background: #e0e0e0;
+}

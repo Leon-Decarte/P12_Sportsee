@@ -1,0 +1,68 @@
+
+.container {
+    padding: 40px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #020203;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #74798C;
+    margin-bottom: 40px;
+}
+
+.usersGrid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.userCard {
+    background: #FBFBFB;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.userCard:hover {
+    border-color: #FF0101;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.userAvatar {
+    width: 60px;
+    height: 60px;
+    background: #FF0101;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 15px;
+}
+
+.userName {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #020203;
+}
+
+.userId {
+    color: #74798C;
+    font-size: 0.9rem;
+}
+

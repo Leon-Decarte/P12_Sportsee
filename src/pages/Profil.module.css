@@ -84,3 +84,71 @@
         /* Réduit sur petit écran */
     }
 }
+
+/* src/pages/Profil.module.css - AJOUTEZ CES STYLES */
+.loading,
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: 40px;
+}
+
+.loading {
+    font-size: 1.2rem;
+    color: #74798C;
+}
+
+.error {
+    background: #fff5f5;
+    border: 1px solid #fed7d7;
+    border-radius: 8px;
+    margin: 40px;
+}
+
+.error h2 {
+    color: #c53030;
+    margin-bottom: 15px;
+}
+
+.error p {
+    color: #744;
+    margin-bottom: 20px;
+}
+
+.header {
+    margin: 20px 20px 40px 20px;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+.userInfo h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.userName {
+    color: #FF0101;
+}
+
+.userIdBadge {
+    background: #f0f0f0;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #74798C;
+}
+
+.backButton {
+    color: #FF0101;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.backButton:hover {
+    text-decoration: underline;
+}

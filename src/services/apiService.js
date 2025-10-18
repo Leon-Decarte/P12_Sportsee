@@ -1,8 +1,7 @@
-const BASE_URL = 'http://localhost:3000/user';
+import { config } from './config.js';
 
-/**
- * Fetch main user data
- */
+const BASE_URL = `${config.apiBaseUrl}/user`; // 
+
 export async function getUserData(id) {
     const res = await fetch(`${BASE_URL}/${id}`);
     const json = await res.json();
@@ -11,7 +10,7 @@ export async function getUserData(id) {
     return {
         id: data.id,
         userInfos: data.userInfos,
-        todayScore: data.todayScore || data.score, // API uses either
+        todayScore: data.todayScore || data.score,
         keyData: data.keyData
     };
 }
